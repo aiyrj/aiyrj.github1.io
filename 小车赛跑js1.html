@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			img{
+				position: absolute;
+			}
+		</style>
+		<!--<script type="text/javascript">
+			var imgNode1=document.createElement('img');
+			imgNode1.src='img/car1.png';
+			imgNode1.style.top=0;
+			imgNode1.style.left='20px';
+			document.body.appendChild(imgNode1);
+			
+			var imgNode2=document.createElement('img');
+			imgNode2.src='img/car2.png';
+			imgNode2.style.top='100px';
+			imgNode2.style.left='20px';
+			document.body.appendChild(imgNode2);
+		    
+		    var move =function(){
+		    	imgNode1.style.left=parseInt(imgNode1.style.left)+20+'px';
+		    	
+		    }
+		    var id=setInterval(function(){
+		    	move();
+		    	if(parseInt(imgNode1.style.left)>=500){
+		    		clearInterval(id);
+		    	}
+		    },200);
+	
+		</script>-->
+		
+		<!--<script type="text/javascript">
+			
+			var Car=function(x,y,imgSrc){
+				this.x=x;
+				this.y=y;
+				this.imgSrc=imgSrc || 'img/car1.png';
+				
+				this.draw=function(){
+					this.imgNode=document.createElement('img');
+					this.imgNode.src=this.imgSrc;
+					this.imgNode.style.top=y+'px'
+					this.imgNode.style.left=x+'px'
+					document.body.appendChild(this.imgNode)
+					
+				}
+				
+		
+			}
+			var car1=new Car(20,20);
+			car1.draw();
+			var car2=new Car(20,100,'img/car2.png');
+			car2.draw();
+			
+			Car.prototype.move=function(){
+				return this.imgNode.style.left=parseInt(this.imgNode.style.left)+20+'px'
+			}
+			var id = setInterval(function(){
+				car1.move();
+				car2.move();
+//				if(parseInt(car1.move())>=500){
+//					clearInterval(id)
+//				}
+				
+			},200)
+		</script>
+		-->
+
+
+<!--<script type="text/javascript">
+	var draw=function(car){
+		var imgNode=document.createElement('img');
+		imgNode.src=car.imgSrc;
+		imgNode.style.top=car.y+'px';
+		imgNode.style.left=car.x+'px'
+		document.body.appendChild(imgNode);
+		return imgNode;
+	}
+	var yellowCar={
+		x:0,
+		y:20,
+		imgSrc:'img/car1.png'
+	}
+	var greenCar={
+		x:0,
+		y:100,
+		imgSrc:'img/car2.png'
+	}
+	
+	var car1=draw(yellowCar);
+	var car2=draw(greenCar);
+	
+	var move=function(car){
+		car.style.left=parseInt(car.style.left)+20+'px'
+	}
+	setInterval(function(){
+		move(car1);
+		move(car2);
+	},1000)
+	
+	
+	
+</script>
+-->
+	
+<!--<script type="text/javascript">
+	var yellowCar={
+		x:0,
+		y:0,
+		imgSrc:'img/car1.png',
+		draw:function(){
+			this.imgNode=document.createElement('img');
+			this.imgNode.src=this.imgSrc;
+			this.imgNode.style.top=this.y+'px'
+			this.imgNode.style.left=this.x+'px'
+			document.body.appendChild(this.imgNode);
+		},
+		move:function(){
+			this.imgNode.style.left=parseInt(this.imgNode.style.left)+20+'px'
+
+		}
+	}
+	var greenCar={
+		x:0,
+		y:100,
+		imgSrc:'img/car2.png',
+		draw:function(){
+			this.imgNode=document.createElement('img');
+			this.imgNode.src=this.imgSrc;
+			this.imgNode.style.top=this.y+'px'
+			this.imgNode.style.left=this.x+'px'
+			document.body.appendChild(this.imgNode);
+	    },
+         move:function(){
+			this.imgNode.style.left=parseInt(this.imgNode.style.left)+22+'px'
+
+		}	   
+	}
+	var car1=yellowCar.draw();
+	var car2=greenCar.draw();
+	setInterval(function(){
+		yellowCar.move();
+		greenCar.move();
+	},200)
+	
+	
+</script>	
+-->
+
+<script type="text/javascript">
+	var Car=function(x,y,imgSrc,speed){
+		
+	    this.x=x;	
+		this.y=y;
+		this.speed=speed;
+		this.imgSrc=imgSrc;
+		this.draw=function(){
+			this.imgNode=document.createElement('img');
+			this.imgNode.src=this.imgSrc;
+			this.imgNode.style.left=this.x+'px';
+			this.imgNode.style.top=this.y+'px';
+			document.body.appendChild(this.imgNode);
+		}
+	    this.move=function(){
+	    	
+	    	this.imgNode.style.left=parseInt(this.imgNode.style.left)+speed+'px'
+	        if(parseInt(this.imgNode.style.left)>=1000){
+	           this.imgNode.style.left='-160px';
+	        }
+	    }
+		
+	}
+//	Car.prototype.move=function(){
+//	    this.imgNode.style.left=parseInt(this.imgNode.style.left)+20+'px'		
+//	}
+	var car1=new Car(20,20,'img/car1.png',20);
+	car1.draw();
+	var car2=new Car(20,100,'img/car2.png',13);
+	car2.draw();
+	
+	setInterval(function(){
+//		car1.move();
+		car2.move();
+	},200)
+	setTimeout(function(){
+		setInterval(function(){
+			car1.move();
+		},200);
+	},2000)
+	
+	
+</script>
+
+
+	</body>
+</html>

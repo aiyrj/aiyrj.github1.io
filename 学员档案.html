@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<form class="list"action="#" method="post">
+		<div class="picture"><img src="img/333.jpg"></div>
+		
+		<h2>学员档案</h2>
+		<p><input class="txt" type="text" value="姓名"/></p>
+		<p><input class="age" type="text" name="" id="" value="age" /></p>
+		<p class="choose">
+			<label for=""><input type="radio" name="sex"  value="" />男</label>
+			<label for=""><input type="radio" name="sex"  value="" />女</label>
+		</p>
+		<p class="choose">
+			<label for=""><input type="checkbox" name="" id="" value="" />学员</label>
+			<label for=""><input type="checkbox" name="" id="" value="" />朋友</label>
+			<label for=""><input type="checkbox" name="" id="" value="" />视频</label>
+			<label for=""><input type="checkbox" name="" id="" value="" />论坛</label>
+		</p>
+		<p>
+			<select name="" class="course">
+				<option value="">java就业</option>
+				<option value="" selected="selected">网页UI</option>
+				<option value="">IOS就业</option>
+			</select>
+			
+			
+			
+		</p>
+		<p class="money_box">
+			<input class="money" type="text" name="" id="" value="工资期待" /><span>元/月</span>
+		</p>
+		<p>
+			<textarea class="meg"name="" rows="4" cols="50">简历</textarea>
+		</p>
+		<p>
+		
+		<input class="btn" type="submit" value="提交"/></p>
+	</form>
+		<style>
+			body{
+				font-size: 12px;font-family: "微软雅黑";
+			}
+			body,h2,form,input,select,textarea{
+				margin: 0;padding: 0;
+				list-style: none;border: none;
+			}
+			.list{
+				width: 685px;
+				margin: 50px auto;
+				background: lightblue;
+				
+				padding: 180px 0 0 340px;
+			}
+			.list .picture{
+
+			   margin-top:-140px;
+			   margin-left:100px;
+			   margin-bottom:50px;
+			   overflow:hidden;
+			   
+			}
+			.list .picture img{
+			   
+			   width:200px;height:200px;
+			   border-radius: 50%;
+			   background-position:center;
+			   background-size: cover;
+			   
+			}
+			p{ margin-top: 20px;}
+			h2{
+				font-size: 38px;
+				color: #26211e;
+				margin-bottom: 60px;
+				padding-left: 100px;
+				/*padding-top: 30px;*/
+				
+			}
+			.txt,.age{
+				width:360px;height:30px;
+				line-height: 30px;
+				padding-left: 40px;
+				color: #ccc;
+			}
+			.choose{
+				width:390px;height:25px;
+				/*margin: 20px auto;*/
+				line-height: 25px;
+				background: #fff;
+				padding: 5px 0 0 10px;
+				/*text-align: center;*/
+			}
+			.course,.money{
+				width: 190px;height: 25px;
+				padding-left: 10px;
+				
+			}
+			.money{
+				/*margin: 0 auto;*/
+				/*display: flex;*/
+				color:#ddd;
+			}
+			.money_box span{
+				font-size: 18px;
+				font-weight: bold;
+				color: #fff;
+			}
+			.meg{
+				width: 390px;height: 80px;
+				padding: 5px 0 0 10px;font-size: 12px;
+				color: #ccc;
+				resize: none;
+			}
+			.btn{
+				width: 390px;height: 30px;
+				background: #eb6854;
+				color: #FFFFFF;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+			
+			
+			
+			
+		</style>
+		
+	</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div class="b box1">
+			<div class="z">
+			<div class="spin"></div>
+			<div class="img">
+				<img src="img/333.jpg"/>
+			</div>
+			<div class="info">
+
+			</div>
+			</div>
+		</div>
+		<div class="b box2">
+			<div class="z">
+
+			<div class="img">
+				<img src="img/333.jpg"/>
+			</div>
+			<div class="info">
+				
+			</div>
+			</div>
+		</div>
+		<div class="b box3">
+			<div class="z">
+
+			<div class="img">
+				<img src="img/333.jpg"/>
+			</div>
+			<div class="info">
+				
+			</div>
+			</div>
+		</div>
+		<div class="b box4">
+			<div class="z">
+              <div class="after"></div>
+			  <div class="img">
+				<img src="img/333.jpg"/>
+			  </div>
+			  <div class="info">
+				
+			  </div>
+			</div>
+		</div>
+		<div class="b box5">
+			<div class="z">
+
+			<div class="img">
+				<img src="img/333.jpg"/>
+			</div>
+			<div class="info">
+				
+			</div>
+			</div>
+		</div>
+		<div class="b box6">
+			<div class="z">
+				<div class="befor"></div>
+
+			   <div class="img">
+				<img src="img/333.jpg"/>
+			   </div>
+			   <div class="info">
+				
+			   </div>
+			</div>
+		</div>
+		<div class="b box7">
+			<div class="z">
+				<div class="befor"></div>
+
+			   <div class="img">
+				<img src="img/333.jpg"/>
+			   </div>
+			   <div class="info">
+				
+			   </div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+<style type="text/css">
+
+
+
+
+.box7 .befor{
+	width: 300px;height: 300px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;left: 0;
+	z-index: 2;
+}
+.box7 .img{
+	border-radius: 50%;
+	transition: all .4s linear;
+}
+.box7 .img:before{
+	content: '';
+	display: block;
+	width: 300px;height: 300px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border: 18px solid rgba(255,255,255,.4);
+	position: absolute;
+}
+.box7 img{
+
+	border-radius: 50%;
+}
+.box7 .info{
+	width: 300px;height: 300px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background: rgba(0,0,0,.4);
+	position: absolute;
+	top: 0;left: 0;
+	transform: scale(0);
+	opacity: 0;
+	/*z-index: -1;*/
+	transition: all .4s linear;
+}
+.box7 .befor:hover+.img{
+	transform: translateX(300px) rotate(180deg);
+	/*transform: rotate(180deg);*/
+	opacity: 0;
+	/*z-index: -1;*/
+}
+
+.box7 .befor:hover~.info{
+	transform: scale(1);
+	/*z-index: 0;*/
+	opacity: 1;
+}
+
+
+
+
+.box6 .img{
+	/*position: absolute;
+	top: 0;left: 0;*/
+	border-radius: 50%;
+	transform: scale(1);
+	opacity: 1;
+	transition: all .4s linear;
+}
+.box6 .img:before{
+	content: '';
+	display: block;
+	width: 300px;height: 300px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border: 18px solid rgba(255,255,255,.4);
+	position: absolute;
+}
+.box6 img{
+
+	border-radius: 50%;
+}
+.box6 .info{
+	width: 300px;height: 300px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background: rgba(0,0,0,.4);
+	position: absolute;
+	top: 0;left: 0;
+	transform: scale(1.4);
+	opacity: 0;
+	transition: all .4s linear;
+	z-index: -1;
+}
+.box6 .befor{
+	width: 300px;height: 300px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;left: 0;
+	z-index: 2;
+}
+.box6 .befor:hover+.img{
+	transform: scale(1.4);
+	opacity: 0;
+	z-index: -1;
+}
+
+.box6 .befor:hover~.info{
+	transform: scale(1);
+	opacity: 1;
+	z-index: 0;
+}
+
+
+
+
+.box5 .img{
+	border-radius: 50%;
+	/*position: absolute;*/
+}
+.box5 .img:before{
+	content: '';
+	display: block;
+	width: 300px;height: 300px;
+	border: 18px solid rgba(255,255,255,.4);
+	box-sizing: border-box;
+	border-radius: 50%;
+	position: absolute;
+}
+.box5 img{
+	border-radius: 50%;
+}
+.box5 .info{
+	width: 300px;height: 300px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background: rgba(0,0,0,.4);
+	position: absolute;
+	top: 0;left: 0;
+	transform:rotatey(90deg);
+	opacity: 0;
+	
+	transition: all .4s linear;
+}
+.box5 .z:hover .info{
+	transform: rotateY(0);
+	opacity: 1;
+}
+
+
+
+
+.box4 .after{
+	width: 300px;height: 300px;
+	position: absolute;
+	top: 0;left: 0;
+	border-radius: 50%;
+	z-index: 2;
+}
+.box4 .img{
+	/*width: 300px;height: 300px;
+	position: relative;*/
+	border-radius: 50%;
+	transform: translateX(0);
+	transition: all .2s ease-in-out;
+	
+}
+
+.box4 .img img{
+	/*position: absolute;*/
+	border-radius: 50%;
+	/*opacity: 0;*/
+}
+.box4 .img:before{
+	content: '';
+	width: 300px;height: 300px;
+	display: block;
+	position: absolute;
+	border-radius: 50%;
+	/*left: 0;top: 0;*/
+	border: 18px solid rgba(255,255,255,0.5);
+    /*box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);*/
+	/*z-index: 1;*/
+	box-sizing: border-box;
+}
+
+.box4 .info{
+	width: 300px;height: 300px;
+	border-radius: 50%;
+	background: rgba(0,0,0,.6);
+	position: absolute;
+	top: 0;left: 0;
+	opacity: 0;
+	/*z-index: -1;*/
+	transform: translateX(-300px);
+	transition: all .2s ease-in-out;
+}
+.box4 .after:hover+.img{
+	opacity: 0;
+	/*z-index: -1;*/
+	/*display: none;*/
+	transform: translateX(300px);
+}
+.box4 .after:hover~.info{
+	/*z-index: 2;*/
+	opacity: 1;
+	transform:translateX(0);
+}
+
+
+
+
+
+.box3 .img{
+	width: 300px;height:300px;
+	position: relative;
+	    transform: translateX(0);
+	    transition: all .4s linear;
+}
+.box3 .z{
+	z-index: 2;
+}
+.box3 .img:before{
+	z-index: 1;
+	position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.box3 img{
+	width:100%;height: 100%;
+	position: absolute;
+	border-radius: 50%;
+	
+}
+.box3 .info{
+	z-index: -1;
+	width: 300px;height: 300px;
+	background: rgba(0,0,0,.6);
+	position: absolute;
+	top: 0;left: 0;
+	border-radius: 50%;
+	transition: all .4s ease-in-out;
+	transform: translateX(-300px);
+	opacity: 0;
+}
+.box3 .z:hover .img{
+	width: 140px;height: 140px;
+	transform: translate(230px,80px);
+	z-index: 1;
+}
+.box3 .z:hover .info{
+	z-index: 0;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+.box2 .img{
+	/*position: relative;*/
+	width: 300px;height: 300px;
+	border-radius: 50%;
+	/*opacity: 1;*/
+}
+
+.box2 .img:before{
+	z-index: 2;
+	position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.box2 img{
+	position: absolute;
+	top: 0;left: 0;
+	border-radius: 50%;
+	transition: all .6s ease-in-out;
+}
+.box2 .info{
+	width: 300px;height: 300px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	top: 0;left: 0;	
+	transform: translateX(-300px);
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s ease-in-out;
+}
+.box2 .img:hover img{
+	transform: rotate(-90deg);
+}
+.box2 .img:hover+.info{
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+.box1 img{
+	width: 300px;height: 300px;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+.b .z{
+	cursor: pointer;
+	position: absolute;
+	
+}
+.box1 .spin{
+	width: 300px;height: 300px;
+	border: 10px solid #ecab18;
+	border-right-color:#1ad280;
+	border-bottom-color:#1ad280;
+	border-radius: 50%;	
+	transition: all 1s ease-in-out;	
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 1;
+}
+.box1 .img{
+	
+	position: absolute;
+    top: 0;left: 0;
+	border-radius: 50%;
+}
+.box1 .info{
+
+	width: 300px;height: 300px;
+	background: rgba(0,0,0,.3);
+	position: absolute;
+    top: 0;left: 0;
+    border-radius: 50%;
+	opacity: 0;
+	transition: all 1s ease-in-out;	
+	box-sizing: border-box;	
+}
+.box1 .z:hover .spin{
+	transform: rotate(180deg);
+}
+.box1 .z:hover .info{
+	opacity: 1;
+}
+
+.b .z{
+	width: 300px;height: 300px;
+	border-radius: 50%;
+}
+.b{ margin: 40px 100px;
+	display: inline-block;
+	width: 300px;height: 300px;
+	//background: lightblue;
+	position: relative;
+
+	}
+
+</style>

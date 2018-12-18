@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="b">
+		<div class="box b1">
+			<div class="left">
+				<div class="black"></div>
+			</div>
+			<div class="right">
+				<div class="white"></div>
+			</div>
+		</div>
+		<div class="box b2">
+			<div class="left">
+				<div class="black"></div>
+			</div>
+			<div class="right">
+				<div class="white"></div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
+<style type="text/css">
+div{
+	margin: 0;padding: 0;
+}
+   .b{
+   	margin: 100px auto;
+   	perspective:400px;
+    width:200px;
+   	
+   }
+   /*.b1{
+   	position: absolute;top: 0;left:0;
+   	transform: rotateX(90deg) translateY(50px);
+   }
+   .b2{
+   	position: absolute;
+   	transform: rotateX(90deg) translateY(-50px);
+   }*/
+	.box{
+		position: absolute;
+		transform-style: preserve-3d;
+		perspective-origin: 50% 50%;
+		width: 200px;height: 200px;
+		border: 1px solid black;
+		border-radius: 50%;
+		overflow: hidden;
+		
+		background: lightblue;
+		
+	}
+	.b:hover .b1{
+		animation: rote1 2s linear infinite;
+	}
+	.b:hover .b2{
+		animation: rote2 2s linear infinite;
+	}
+	.left{
+		width: 100px;height: 100px;
+		border-top: 1px solid black;
+		border-radius: 50%;
+		float: left;
+		box-sizing: border-box;	
+		position: absolute;
+		top: 50px;	
+	}
+	.black{
+		width: 20px;height: 20px;
+		background: black;
+		border-radius: 50%;
+		position:absolute;
+		top: 50px;left: 40px;
+	}
+	.right{
+		width: 100px;height: 100px;
+		border-bottom: 1px solid black;
+		border-radius: 50%;
+		float:right;
+		box-sizing: border-box;
+		position: absolute;
+		top: 50px;right: 0;		
+	}
+	.white{
+		width: 20px;height: 20px;
+		background: white;
+		border-radius: 50%;
+		position:absolute;
+		top: 50px;right: 40px;
+	}
+	@keyframes rote1{
+		from{transform: rotate(0) ;margin-top: 0;}
+		to{transform: rotate(360deg);margin-top:-100px;}
+	}
+	@keyframes rote2{
+		from{transform: rotate(0) ;margin-top: 0px;}
+		to{transform: rotate(-360deg);margin-top: 100px;}
+	}
+	/*.b {
+		transform: rotateX(60deg);
+		
+	}*/
+</style>

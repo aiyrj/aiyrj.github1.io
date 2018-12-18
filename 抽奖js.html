@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="bg">
+		   <div id="jiang">
+		      <img src="img/turntable.png"/>
+		   </div>
+		   <div id="point">
+		      <img src="img/pointer.png"/>
+		   </div>
+		
+		</div>
+		<style type="text/css">
+			#bg{
+				width: 650px;height: 600px;
+				margin: 0 auto;
+				background: url(img/turntable-bg.jpg) no-repeat;
+				position: relative;
+			}
+			#jiang{
+				width: 450px;height: 450px;
+				position: absolute;
+				top: 60px;left: 117px;
+				border-radius: 50%;
+			/*	transition: all 5s ease-in-out;*/
+			}
+			#jiang img{
+				border-radius: 50%;
+			}
+			#point{
+				width: 174px;height: 228px;
+				position: absolute;
+				top: 160px;left: 260px;
+				
+			}
+			/*#jiang:hover{
+				transform:rotate(360deg);
+			}*/
+		</style>
+		<script type="text/javascript">
+			var point=document.getElementById("point");
+			var jiang=document.getElementById("jiang");
+			
+			var lottery=function(){
+				var i=Math.floor(Math.random()*100);
+				if(i < 1) {
+					return {
+						code: 1,
+						text: "一等奖"
+					};
+				} else if(i < 8) {
+					return {
+						code: 2,
+						text: "二等奖"
+					};
+				} else if(i < 18) {
+					return {
+						code: 3,
+						text: "三等奖"
+					};
+				} else if(i < 30) {
+					return {
+						code: 4,
+						text: "四等奖"
+					};
+				} else if(i < 50) {
+					return {
+						code: 5,
+						text: "五等奖"
+					};
+				} else if(i< 80) {
+					return {
+						code: 6,
+						text: "六等奖"
+					};
+				} else {
+					return {
+						code: 7,
+						text: "xxxxxx"
+					};
+				}
+			}
+			var rotate=function(){
+				jiang.style.transition='all 3s';
+				var x=lottery();
+				var cur=30+(360/7)*(x.code-1);
+				jiang.style.transform="rotate("+(cur+1080)+"deg)";
+				setTimeout(function(){
+					jiang.style.transition='all 0s';
+					jiang.style.transform='rotate('+cur+'deg)';
+					alert(x.text);
+					canClick=true;
+				},3000);
+			}
+			
+			var canClick=true;
+			
+			point.onclick=function(){
+				if(canClick===true){
+					rotate();
+				}
+				canClick=false;
+			}
+			
+			
+//			var irun=function(){
+//				var i=Math.floor(Math.random()*100);
+//				jiang.style.transition="all 5s";
+//				var cur=30+50*i;
+//				jiang.style.transform='rotate('+(cur+360)+'deg)';
+//				setTimeout(function(){
+//					jiang.style.transition="all 0s";
+//					jiang.style.transform='rotate('+cur+'deg)';
+//				},5000);
+//			}
+//			
+			
+//			point.onclick=function(){
+//			irun();
+//			switch(i){
+//				case 0:jiang.style.transform="rotate(2137deg)";alert('未中奖');break;
+//				case 1:jiang.style.transform="rotate(1830deg)";alert('免单4999元');break;				
+//				case 2:jiang.style.transform="rotate(1890deg)";alert('免单50元');break;				
+//				case 3:jiang.style.transform="rotate(1940deg)";alert('免单10元');break;				
+//				case 4:jiang.style.transform="rotate(1985deg)";alert('免单5元');break;				
+//				case 5:jiang.style.transform="rotate(1985deg)";alert('免单5元');break;				
+//				case 6:jiang.style.transform="rotate(2040deg)";alert('免分期服务费');break;				
+//				case 7:jiang.style.transform="rotate(2090deg)";alert('提高白条额度');break;			
+//			}	
+//			}
+//			point.onclick=function(){
+//				
+//				
+//				var can=true;
+//				if(can===true){
+//					irun();
+//				}
+//			}
+		</script>
+	</body>
+</html>

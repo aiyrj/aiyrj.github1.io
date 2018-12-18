@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p>11111111111111111111111
+		22222222222222222222222
+		33333333333333333333333
+		44444444444444444444444
+		55555555555555555555555
+		66666666666666666666666
+		77777777777777777777777
+		88888888888888888888888
+		99999999999999999999999
+		00000000000000000000000</p>
+		
+		<br /><br /><br />
+		<h2>开关切换</h2>
+		<label class="switch">
+			<input	type="checkbox"></input>
+			<div class="slider"></div>
+		</label>
+		<label class="switch">
+			<input	type="checkbox" checked=""></input>
+			<div class="slider"></div>
+		</label>
+		<br /><br />
+		<label class="switch">
+			<input	type="checkbox"></input>
+			<div class="slider round"></div>
+		</label>
+		<label class="switch">
+			<input	type="checkbox" checked=""></input>
+			<div class="slider round"></div>
+		</label>
+	</body>
+</html>
+
+<style type="text/css">
+.switch{
+	position: relative;
+	display: inline-block;
+	width: 60px;height: 34px;
+}
+.switch input{
+	display: none;
+}
+.slider{
+	position: absolute;
+	cursor: pointer;
+	top: 0;left: 0;right: 0;bottom: 0;
+	background-color: #ccc;
+	transition: .4s;
+}
+.slider:before{
+	position: absolute;
+	content: '';
+	height: 26px;width: 26px;
+	left: 4px;bottom: 4px;
+	background-color: white;
+	transition: .4s;
+}
+input:checked+.slider{
+	background-color: #2196F3;
+}
+input:focus+.slider{
+	box-shadow: 0 0 1px #2196F3;
+}
+input:checked+.slider:before{
+	transform: translateX(26px);
+}
+.slider.round{
+   border-radius: 34px;
+}
+.slider.round:before{
+	border-radius: 50%;
+}
+
+
+
+
+
+
+
+	p{
+		display: block;
+		height: 210px;width: 220px;
+		background: lightblue;
+		border: 50px solid lightcoral;
+		border-image: url(img/Fesports-sc2-wcs.png);
+		border-image-slice: 64;
+		border-image-repeat:round;
+		transition: .4s;
+	}
+
+</style>

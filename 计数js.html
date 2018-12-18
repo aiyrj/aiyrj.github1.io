@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+<!--作业1-->		
+		<script type="text/javascript">
+		
+		 var add=function(){
+		 	var a=arguments[0];
+		 	if(arguments.length===1)
+		 		{
+		 		     a+=100;
+		 		    
+		 		}
+		 	else{
+		 	for(var i=1;i<arguments.length;i++){
+		 		
+		 		 a+=arguments[i];
+		 		}
+		 	}return a;
+		 }
+		 var s=add(1);
+		 
+		 var s1=add(1,2,3,4,5,6,7,8,9);
+		 		
+		</script>
+<!--作业2-->	
+
+      <input type="button"onclick="add1()" id="add1" value="btnA Count0" />
+  
+	 <input type="button" onclick="add2()" id="add2" value="btnA Count0" />
+     <style type="text/css">
+     	input{
+     		width: 160px;height: 40px;
+     		background: lightcyan;
+     		font-size: 20px;
+     		padding: 10px 20px;
+     	}
+     	
+     	
+     </style>
+      <script type="text/javascript">
+        
+      	var add1=document.querySelector('#add1');
+      	var add2=document.querySelector('#add2');  
+      	
+        var count1=0,count2=0;
+//    	var add=function(){
+//  	
+//    			return count+=1;
+// 
+//    	}
+      	add1=function(){
+      	 
+//    		add();
+            count1++;
+      		document.getElementById('add1').value='btnA Count'+count1;
+      		
+      	}
+      	
+      	add2=function(){
+//    		add();
+             count2++;
+       		document.getElementById('add2').value='btnB Count'+count2;      		
+      	}
+      </script>
+		
+<!--作业3-->		
+		
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bgshadow"></div>
+        <a>
+            mousein
+        </a>
+
+    </div>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            background: lightblue;
+            z-index: 1;
+            overflow:hidden;
+            cursor: pointer;
+        }
+
+        .bgshadow {
+            width: 200px;
+            height: 100px;
+            background: lightcoral;
+            border-radius: 50%;
+            /* opacity: 0; */
+            transform: scale(0);
+            position: absolute;
+            z-index: -1;
+            transition:transform .6s;
+
+        }
+
+        .box a {
+            display: inline-block;
+            width:200px;height:100px;
+            font-size: 22px;
+            line-height: 100px;
+
+        }
+
+        .active {
+            transform: scale(4);
+        }
+    </style>
+    <script>
+        $('a').hover(function (ev) {
+            $('.bgshadow').css({
+                top: (ev.clientY - $('a').offset().top - 50),
+                left: (ev.clientX - $('a').offset().left - 100)
+            })
+            $('div.bgshadow').addClass('active');
+            // console.log((ev.clientX - $('span').offset().left) + '/' + (ev.clientY - $('span').offset().top))
+
+        }, function () {
+            $('div.bgshadow').removeClass('active');
+        })
+    </script>
+
+</body>
+
+</html>

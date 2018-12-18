@@ -1,0 +1,264 @@
+body,
+div,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+.bg {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background: linear-gradient(120deg, rgba(50, 150, 100, 0.4), rgba(0, 0, 100, 0));
+  perspective: 1500px;
+  overflow: hidden;
+}
+input {
+  display: none;
+}
+input + .card {
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 100px;
+  transition: all .4s;
+  border-radius: 20px;
+}
+input + .card h2 {
+  color: white;
+  font-size: 50px;
+  margin-top: 100px;
+  transition: all .4s;
+}
+input + .card p {
+  color: white;
+  font-size: 30px;
+  transition: all .4s;
+  margin-bottom: 20px;
+}
+input + .card h3 {
+  margin-top: 30px;
+  color: white;
+  font-size: 50px;
+}
+input + .card .layer {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+}
+input + .card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: inherit;
+  z-index: -2;
+  border-radius: 30px;
+}
+input + .card .photo {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background: url(img/600.jpg) no-repeat bottom center;
+  background-size: cover;
+  z-index: -1;
+  border-radius: 30px;
+}
+input + .card .photo::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: inherit;
+  border-radius: 30px;
+}
+input + .card .chart {
+  font-size: 0;
+}
+input + .card .chart .bar {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 10px;
+  transform: rotate(-45deg);
+  transform-style: preserve-3d;
+  position: relative;
+  text-align: center;
+  transition: all .4s;
+}
+input + .card .chart .bar::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  content: "";
+  background: rgba(255, 255, 255, 0.8);
+  transform-origin: 50% 0 0;
+  transform: translateY(30px) rotateX(90deg);
+  height: 0px;
+  transition: inherit;
+}
+input + .card .chart .bar::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  content: "";
+  font-size: 22px;
+  line-height: 30px;
+  background: whitesmoke;
+  transform: translateZ(0px) rotate(90deg);
+  transition: inherit;
+}
+input + .card .chart .bar span {
+  width: 0px;
+  line-height: 30px;
+  font-size: 20px;
+  display: block;
+  background: #babbba;
+  transform-origin: 0 50% 0;
+  transform: rotateY(-90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: inherit;
+  opacity: 0;
+}
+input + .card .chart .bar1 {
+  transition: all 1s;
+}
+input + .card .chart .bar2 {
+  transition: all .5s;
+}
+input + .card .chart .bar3 {
+  transition: all .8s;
+}
+input + .card .chart .bar4 {
+  transition: all 1.2s;
+}
+input + .card .chart .bar5 {
+  transition: all .6s;
+}
+input + .card .chart .bar6 {
+  transition: all .6s;
+}
+input + .card .chart .bar7 {
+  transition: all 1s;
+}
+input:checked + .card {
+  transform: rotateX(60deg) translateZ(10px);
+}
+input:checked + .card::after {
+  transform: translateZ(-20px);
+}
+input:checked + .card h2,
+input:checked + .card p {
+  opacity: 0;
+}
+input:checked + .card .photo::before {
+  background: rgba(98, 137, 180, 0.8);
+}
+input:checked + .card .chart .bar span {
+  opacity: 1;
+  text-align: right;
+}
+input:checked + .card .chart .bar1::before {
+  height: 200px;
+}
+input:checked + .card .chart .bar1::after {
+  transform: translateZ(200px) rotate(90deg);
+  content: "M";
+}
+input:checked + .card .chart .bar1 span {
+  width: 200px;
+}
+input:checked + .card .chart .bar2::before {
+  height: 100px;
+}
+input:checked + .card .chart .bar2::after {
+  transform: translateZ(100px) rotate(90deg);
+  content: "T";
+}
+input:checked + .card .chart .bar2 span {
+  width: 100px;
+}
+input:checked + .card .chart .bar3::before {
+  height: 150px;
+}
+input:checked + .card .chart .bar3::after {
+  transform: translateZ(150px) rotate(90deg);
+  content: "W";
+}
+input:checked + .card .chart .bar3 span {
+  width: 150px;
+}
+input:checked + .card .chart .bar4::before {
+  height: 240px;
+}
+input:checked + .card .chart .bar4::after {
+  transform: translateZ(240px) rotate(90deg);
+  content: "T";
+}
+input:checked + .card .chart .bar4 span {
+  width: 240px;
+}
+input:checked + .card .chart .bar5::before {
+  height: 70px;
+}
+input:checked + .card .chart .bar5::after {
+  transform: translateZ(70px) rotate(90deg);
+  content: "F";
+}
+input:checked + .card .chart .bar5 span {
+  width: 70px;
+}
+input:checked + .card .chart .bar6::before {
+  height: 70px;
+}
+input:checked + .card .chart .bar6::after {
+  transform: translateZ(70px) rotate(90deg);
+  content: "S";
+}
+input:checked + .card .chart .bar6 span {
+  width: 70px;
+}
+input:checked + .card .chart .bar7::before {
+  height: 100px;
+}
+input:checked + .card .chart .bar7::after {
+  transform: translateZ(100px) rotate(90deg);
+  content: "X";
+}
+input:checked + .card .chart .bar7 span {
+  width: 100px;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+<link rel="stylesheet" href="boots/css/bootstrap.css">
+<script src="boots/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="big">
+    <div class="box1">
+        <img src="img/WMd.jpeg" alt="">
+    </div>
+    <div class="box2">
+        <div class="bg b1"></div>
+        <div class="bg b2"></div>
+        <div class="bg b3"></div>
+        <div class="bg b4"></div>
+        <div class="bg b5"></div>
+        <div class="bg b6"></div>
+        <div class="bg b7"></div>
+        <div class="bg b8"></div>
+        <div class="bg b9"></div>
+    </div>
+</div>
+</body>
+
+<style>
+.box1{
+    width:260px;height:200px;
+}
+.box1 img{
+    width:100%;height:100%;
+}
+.box2{
+
+    width:600px;height:451px;
+    overflow: hidden;
+    /* background: lightskyblue; */
+    position: relative;
+    top:-200px;left:0px;
+    /* transform:scale(0); */
+}
+.box2 .bg{
+    width:200px;height:200px;float:left;
+    background-image:url("img/WMd.jpeg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    
+    /* transform:scale(0);
+    transition: transform .6s; */
+}
+/* .box1:hover+.box2{
+    transform: scale(1);
+}
+.box1:hover+.box2 .bg{
+    transform: scale(1);
+} */
+.box2 .bg.b1{
+    background-position: 0 0;
+}
+.box2 .bg.b2{
+    background-position: -200px 0;
+}
+.box2 .bg.b3{
+    background-position: -400px 0;
+}
+.box2 .bg.b4{
+    background-position: 0 -200px;
+}
+.box2 .bg.b5{
+    background-position: -200px -200px;
+}
+.box2 .bg.b6{
+    background-position: -400px -200px;
+}
+.box2 .bg.b7{
+    background-position: 0 -400px;
+}
+.box2 .bg.b8{
+    background-position: -200px -400px;
+}
+.box2 .bg.b9{
+    background-position: -400px -400px;
+}
+
+
+</style>
+<script>
+$('.bg').css({'transform':'scale(0)'})
+$('.box2').css({'transform':'scale(0)'})
+$('.box1,.box2').hover(function(){
+    $('.box2').css({'transform':'scale(1)'});
+    $('.bg').css({'transform':'scale(1)',
+                  'transition':'transform 1s',
+                  'transform-origin':'center'});
+},function(){
+    $('.bg').css({'transform':'scale(0)'});
+   $('.box2').css({'transform':'scale(0)'})
+})
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</html>

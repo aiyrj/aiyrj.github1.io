@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="slider">
+			<div id="content">
+				<img src="img/1.jpg"/>
+				<img src="img/2.jpg"/>
+				<img src="img/3.jpg"/>
+				<img src="img/4.jpg"/>
+			</div>
+			
+			<div id="bott">
+				<span id="prev">
+					prev
+				</span>
+				<span id="next">
+					next
+				</span>
+			</div>
+			
+			<div id="pagan">
+				<!--<i></i> <i></i>  <i></i>	<i></i>-->
+			</div>
+			
+		</div>
+		
+		
+		<style type="text/css">
+			#slider{
+				width: 400px;
+				margin: 0 auto;
+				position: relative;
+				background: lightblue;
+				overflow: hidden;
+			}
+			#content{
+				width:1600px;
+				font-size: 0;
+				/*transition: all 1s;*/
+			}
+			#content img{
+				width: 400px;
+				/*position: absolute;
+				top: 0;left: 0;*/
+				opacity: 1;
+				/*vertical-align: middle;*/
+				
+				
+				
+			}
+			/*#content img:first-child{
+				position: relative;
+				opacity: 1;
+			}*/
+			#bott span{
+				background: lightpink;
+				line-height: 20px;
+				display: inline-block;
+				margin: 10px 80px;
+				cursor: pointer;
+			}
+			/*#pagan i{
+				width: 20px;height: 20px;
+				display: inline-block;
+				background: lightsalmon;
+				border-radius: 50%;
+				position:absolute;
+				left: 35%;bottom: 50px;
+			}
+			#pagan i:nth-child(2){
+				left:45%;
+			}
+			#pagan i:nth-child(3){
+				left:55%;
+			}
+			#pagan i:nth-child(4){
+				left:65%;
+			}*/
+		</style>
+		<script type="text/javascript">
+		    var slider=document.getElementById('slider');
+			var prev=document.getElementById('prev');
+			var next=document.getElementById('next');
+			var content=document.getElementById('content');
+			var imgs=slider.getElementsByTagName('img');
+			var cur=0;
+			
+			var nextpic=function(){
+//				cur++;
+                
+				content.style.transition='all 1s';
+				//if(cur>imgs.length-1){
+				 // cur=0;
+				 setTimeout(function(){
+				  content.style.marginLeft='0px';
+				  content.style.transition='0s';
+				  content.appendChild(content.firstElementChild);
+				//}
+			
+				},1000);
+				content.style.marginLeft='-400px';
+				
+                
+			}
+			var prevpic=function(){
+				cur--;
+				content.style.transition='1s';
+				if(cur<0){
+				  cur=imgs.length-1;
+				  content.style.marginLeft=-400*cur+'px';
+				  content.style.transition='0s';
+				}
+				content.style.marginLeft=-400*cur+'px';
+//          	content.insertBefore(content.lastElementChild,content.firstElementChild);
+			}
+			next.onclick=function(){
+				nextpic();
+			}
+			prev.onclick=function(){
+				prevpic();
+			}
+			var cannext=true;
+			setInterval(function(){
+				if(cannext===true){
+				   nextpic();
+				}
+			},3000);
+			slider.onmouseover=function(){
+				cannext=false;
+			}
+			slider.onmouseout=function(){
+				cannext=true;
+			}
+			
+			
+			
+			
+		</script>
+
+	
+
+	    <!--<script type="text/javascript">
+	    	var content=document.querySelector('#content');
+	    	var next=document.querySelector('#next');
+	    	var prev=document.querySelector('#prev');
+	    	
+	    	next.onclick=function(){
+	    		
+	    		content.style.transition='all 1s';
+	    		content.style.left='-400px';
+	    		setTimeout(function(){
+	    			content.style.transition='all 0s';
+	    			content.style.marginLeft='0';
+	    			content.appendChild(content.firstElementChild);
+	    		},3000)
+	    	}
+	    	prev.onclick=function(){
+	    		content.insertBefore(content.lastElementChild,content.firstElementChild);
+	    	}
+	    	
+	    	
+	    </script>
+
+	-->
+	</body>
+</html>

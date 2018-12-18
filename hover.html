@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a class="y1" href="">yyyyyyy1</a>
+		<a class="y2" href="">yyyyyyy2</a>		
+		<a class="y3" href="">yyyyyyy3</a>		
+		<a class="y4" href="">yyyyyyy4</a>		
+		<a class="y5" href="">yyyyyyy5</a>		
+		<a class="y6" href="">yyyyyyy6</a>		
+		<a class="y7" href="">yyyyyyy7</a>		
+		<a class="y8" href="">yyyyyyy8</a>		
+		<a class="y9" href="">yyyyyyy9</a>			
+		<style type="text/css">
+			a{
+				
+				margin: 50px 50px;
+				text-decoration: none;
+				color:hotpink;
+				font-size: 20px;
+				font-family: "微软雅黑";
+				line-height: 20px;
+				padding: 20px;
+				display: inline-block;
+				background: lightblue;
+				vertical-align: middle;
+				position: relative;
+			}
+			.y1:hover{
+				transform: scale(1.2);
+			}
+			.y2:hover{
+				animation-name: y2;
+				animation-duration: 1s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+			@keyframes y2{
+				0%{transform: scale(1.2);}
+				50%{transform: scale(1);}
+				100%{transform: scale(0.8);}
+			}
+			.y3:hover{
+				animation-name: y3;
+				animation-duration: 1s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+			@keyframes y3{
+				0%{background: lightcoral;transform: scale(1.2);color: black;}
+				50%{background: yellow;transform: scale(1);color: red;}
+				100%{background: lightblue;transform: scale(0.8);color: hotpink;}
+			}
+			.y4:hover{
+				animation-name: y4;
+				animation-duration: 1s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+			@keyframes y4{
+				0%{transform: translateX(3px) rotate(2deg);}
+				20%{transform: translateX(-3px) rotate(-2deg);}
+				40%{transform: translateX(3px) rotate(2deg);}
+				60%{transform: translateX(-2px) rotate(-1deg);}
+				80%{transform: translateX(2px) rotate(1deg);}
+				100%{transform: translateX(-1px) rotate(-1deg);}
+		
+				}
+			
+			.y5:before{
+				content: '';
+				position: absolute;
+				top:100%;left: 5%;
+				z-index: -1;
+				display: block;
+				height: 10px;
+				width:90%;
+				border-radius: 50%;
+				opacity: 0;
+				background:radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);;
+				transition: all .4s;
+			  
+			  
+			}
+			.y5:hover:before{
+				/*transform: translateY(5px);*/
+				opacity: 1;
+			}
+			.y5:hover{
+				transform: translateY(-5px);
+			}
+			.y6{
+				z-index: 1;
+				transition-duration: .4s;
+			}
+			.y6:before{
+				content: '';
+				display:inline-block;
+				height: 100%;width: 100%;
+				background-color: blue;
+				position:absolute;
+				top: 0;left: 0;
+				transform-origin: 50%;
+				transform: scaleX(0);
+				transition-property: transform;
+				transition-duration: .4s;
+				
+				opacity: 0;
+				z-index: -1;
+				
+			}
+			
+			.y6:hover:before{
+				opacity: 1;
+				transform: scaleX(1);
+	
+			}
+			.y6:hover{
+				color: white;
+					
+			}
+			
+			.y7{
+				z-index: 1;
+				transition-duration: .4s;
+				overflow: hidden;
+			}
+			.y7:before{
+				content: '';
+				display:inline-block;
+				height: 100%;width: 100%;
+				background-color: blue;
+				position:absolute;
+				top: 0;left: 0;
+				transform-origin: 50%;
+				transform: scale(0);
+				transition-property: transform;
+				transition-duration: .4s;
+
+				opacity: 0;
+				border-radius: 50%;
+				
+				z-index: -1;
+				
+			}
+			
+			.y7:hover:before{
+				opacity: 1;
+				transform: scale(2);
+	
+			}
+			.y7:hover{
+				color: white;
+					
+			}
+			
+			.y8{
+				z-index: 1;
+				/*transition: all .6s;*/
+			}
+			.y8:before{
+				content: '';
+				display: inline-block;
+				width: 90%;height: 90%;
+				box-sizing: border-box;
+				border: 4px solid white;
+				position: absolute;top: 5%;left: 5%;
+				opacity: 0;
+			}
+			.y8:hover:before{
+				opacity: 1;
+			}
+			/*.y8:hover{
+				
+				background: white;
+			}*/
+			.y9{
+				/*z-index: 1;*/
+				/*border: 4px solid whitesmoke;*/
+				/*box-sizing: content-box;*/
+			}
+			.y9:before{
+				content: '';
+				display: inline-block;
+				/*width: 100%;height: 100%;*/
+				border: 5px solid lightblue;
+				position:absolute;
+				top: -20px;bottom: -20px;left: -20px;right: -20px;
+				transition-duration: 1s;
+				/*transition-property: top,right,left,bottom;*/
+				opacity: 0;
+			}
+			.y9:hover:before{
+				top: -10px;left: -10px;right: -10px;bottom: -10px;
+				opacity: 1;
+			}
+			
+			
+			
+		</style>
+		
+		
+		
+		
+	</body>
+</html>
